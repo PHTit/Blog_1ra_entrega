@@ -1,0 +1,16 @@
+{% extends "coder_course/index.html" %}
+{% load static %}
+{% block contenidoquecambia %}
+
+<h2>Nuevo post!</h2>
+<hr></hr>
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ viajes_form.as_p }}
+
+    <input type="submit" class="btn btn-primary" value="Crear reseña de Viaje" />
+
+</form>
+
+{% endblock %}

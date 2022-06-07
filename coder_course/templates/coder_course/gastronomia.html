@@ -1,0 +1,19 @@
+{% extends "coder_course/index.html" %}
+{% load static %}
+{% block contenidoquecambia %}
+
+<h2>Reseña de Recetas</h2>
+<a class="card_custom" href="{% url 'GastronomiaDjangoForms' %}">Crear nueva reseña</a>
+
+<hr></hr>
+<ul>
+    {% for gastronomia in gastronomia %}
+        <li>
+            Receta: {{gastronomia.name}}
+            -- Post: {{gastronomia.plot}}
+            
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

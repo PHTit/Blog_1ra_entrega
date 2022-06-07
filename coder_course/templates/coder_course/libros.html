@@ -1,0 +1,19 @@
+{% extends "coder_course/index.html" %}
+{% load static %}
+{% block contenidoquecambia %}
+
+<h2>Reseña de Libros</h2>
+<a class="card_custom" href="{% url 'LibrosDjangoForms' %}">Crear nueva reseña</a>
+
+<hr></hr>
+<ul>
+    {% for libros in libros %}
+        <li>
+            libros: {{libros.name}}
+            -- Post: {{libros.plot}}
+           
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

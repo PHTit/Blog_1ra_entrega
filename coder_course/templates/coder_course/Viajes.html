@@ -1,0 +1,30 @@
+{% extends "coder_course/index.html" %}
+{% load static %}
+{% block contenidoquecambia %}
+
+<h2>Buscador de reseña</h2>
+<hr></hr>
+
+<form action="/coder_course/search" method="GET">
+    <div>
+        <input type="text" name="text_search" id="viajes_name" placeholder="Busqueda por nombre">
+        <input type="submit" value="Buscar por Nombre">
+    </div>
+</form>
+
+<hr></hr>
+
+<h2>Reseña de Viajes</h2>
+<a class="card_custom" href="{% url 'ViajesDjangoForms' %}">Crear nueva reseña</a>
+
+<hr></hr>
+<ul>
+    {% for viajes in viajes %}
+        <li>
+            Viaje: {{viajes.name}}
+            -- Post: {{viajes.plot}}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
